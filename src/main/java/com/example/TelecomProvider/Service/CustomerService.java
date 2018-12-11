@@ -13,8 +13,7 @@ import com.example.TelecomProvider.Model.Customer;
 public class CustomerService {
 	
 	HashSet<Customer> customerRecords=new HashSet<>();
-	HashMap<Long,String> phoneNumber=new HashMap<>();
-
+	
 	/*Here we are adding customer record in collection
 	  New record added when it is not in DB(Collection) 
 	  if it is Collection then it will get updated
@@ -55,6 +54,7 @@ public class CustomerService {
 	  collection
 	*/
 	public HashMap<Long,String> getAllPhoneNubers(){
+		HashMap<Long,String> phoneNumber=new HashMap<>();
 		customerRecords.forEach(c1 -> {
 			phoneNumber.putAll(c1.getContactNumber());
 		});
@@ -67,6 +67,7 @@ public class CustomerService {
 	  collection
 	*/
 	public HashMap<Long, String> getNumberOfCustomer(Integer customerId) {
+		HashMap<Long,String> phoneNumber=new HashMap<>();
 		if(Objects.isNull(customerId))
 			throw new Error("PLEASE ENTER CUSTOMER ID");
 		
@@ -83,6 +84,7 @@ public class CustomerService {
 	  collection
 	*/
 	public String activatePhoneNumber(Long contactNumber){
+		HashMap<Long,String> phoneNumber=new HashMap<>();
 		if(Objects.isNull(contactNumber))
 			throw new Error("PLEASE ENTER CONTACT NUMBER");
 		
